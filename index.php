@@ -28,9 +28,9 @@ if ($row) {
     $password = null;
     // パスワードセットの有無
     $key = $row['key'];
-    if (!empty($row['password'])) {
+    if (!empty($row['pass'])) {
         $hasPass = true;
-        $password = $row['password'];
+        $password = $row['pass'];
     }
     // ダウンロード実施の場合
     if ($isDownload) {
