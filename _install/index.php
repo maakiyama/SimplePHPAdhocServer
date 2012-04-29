@@ -83,11 +83,11 @@ if(isset($_GET['mode'])&&$_GET['mode']=='done'){
 $check_ok = false;
 // check permission
 $base_dir = dirname(dirname(__FILE__));
-if(is_writable($base_dir."/binary")){
-    echo '<tr><td><span class="label success">OK</span></td><td>/binary is writable</td></tr>';
+if(is_writable($base_dir."/binary")&&is_writable($base_dir."/plist")){
+    echo '<tr><td><span class="label success">OK</span></td><td>/binary and /plist is writable</td></tr>';
     $check_ok = true;
 }else{
-    echo '<tr><td><span class="label important">NG</span></td><td>/binary is NOT writable</td></tr>';
+    echo '<tr><td><span class="label important">NG</span></td><td>/binary or /plist is NOT writable</td></tr>';
 }
 
 if($check_ok){
@@ -114,7 +114,7 @@ if($check_ok){
       </div>
 
       <footer>
-        <p>&copy; Company 2011</p>
+        <p>&copy; @ku_suke 2011</p>
       </footer>
 
     </div> <!-- /container -->
